@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.input-container{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.tab-container{
+
+width: 100%;
+/* position: relative; */
+/* max-height: 55px; */
+border: 2px solid red;
+/* display: flex;
+flex-direction: column; */
+}
+.tabs{
+    display: flex;
+    align-items: center;
+   
+    padding: 10px;
+    border: 2px solid black;
+}
+.tab-item{
+    height: 35px;
+    line-height: 35px;
+    padding: 0 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    letter-spacing: .5px;
+    background-color: yellow;
+    border: 2px solid black;
+}

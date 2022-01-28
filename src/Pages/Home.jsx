@@ -1,11 +1,13 @@
 import Nav from "../Components/Navbar/Nav";
+import Test from "../Components/EquityDeliveryGroww/EquityGroww"
 function Home() {
   return (
     <div>
+      {/* <Nav /> */}
       <div>
-      <Nav />
+      brokerage calculator
       </div>
-      Hello
+      <Test/>
     </div>
   );
 }

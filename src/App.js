@@ -3,8 +3,10 @@ import Home from "./Pages/Home";
 import Nav from "./Components/Navbar/Nav";
  function App() {
    return (
-//  <Nav/> 
- <Home/>
+     <div>
+       <Nav/>
+       <Home/>
+     </div>
   );
 }
 

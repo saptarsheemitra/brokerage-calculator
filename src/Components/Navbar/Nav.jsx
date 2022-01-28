@@ -59,8 +59,9 @@ function Nav() {
       </div>
       <div className={css.navmain}>
         <ul className={css.navlist}>
+        <li className={css.navitems}>Home</li>
           {/* <Link */}
-          <li className={css.navitems}>Equity Delivery</li> 
+          <li className={css.navitems}>Equity Delivery</li>  
           {/* </Link> */}
           <li className={css.navitems}>Intraday</li>
           <li className={css.navitems}>TesT</li>
