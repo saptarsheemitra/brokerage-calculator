@@ -1,0 +1,47 @@
+.navcontainer{
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+    display: flex;
+    /* flex-direction: row; */
+    height: 40px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    /* border: 10px solid black; */
+}
+.navlogo{
+    background-color: red;
+    border: 10px solid black;
+    justify-content: flex-start;
+}
+.navmain{
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: flex-end;
+    align-items: center; */
+    /* width: 100%; */
+    /* margin: 10px; */
+    border: 10px solid black;
+}
+.navlist{
+    /* color: #fff; */
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    /* justify-self: space-evenly; */
+    /* margin-left: 30px; */
+    /* padding: 10px 20px; */
+    width: 100%;
+    transition: all .5s;
+    border: 10px solid black;
+    
+    
+}
+.navitem{
+
+    cursor: pointer;
+}

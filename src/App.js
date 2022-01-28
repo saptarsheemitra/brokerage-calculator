@@ -1,8 +1,8 @@
+// import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import Nav from "./Components/Navbar/Nav";
  function App() {
   return (
-    <div>
-  Hello
-    </div>
+    <Nav/>   
   );
 }
 
