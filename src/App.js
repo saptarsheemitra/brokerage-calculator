@@ -1,8 +1,10 @@
-// import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
 import Nav from "./Components/Navbar/Nav";
  function App() {
-  return (
-    <Nav/>   
+   return (
+//  <Nav/> 
+ <Home/>
   );
 }
 
