@@ -22,8 +22,8 @@ function EquityBuyG() {
       <div className="charge-breakup">
         <div>Breakup Charges</div>
         <div>Groww Charges</div>
-        <div>
-          <div>Brokerage</div>
+        <div className="amount-show">
+          <div >Brokerage</div>
           <div>
             <span className="">₹</span>
             <span>0.05</span>

@@ -62,7 +62,7 @@ flex-direction: column; */
     /* background-color: red; */
     color: black;
 }
-/* -------------- */
+/* -----EquityBuyG--------- */
 .main-output{
     border: 1px solid black;
 }
@@ -75,5 +75,9 @@ flex-direction: column; */
     border: 1px dotted black;
 }
 .charge-breakup{
-    
+    /* display: inline; */
+}
+.amount-show{
+    display: flex;
+    justify-content: space-between;
 }
