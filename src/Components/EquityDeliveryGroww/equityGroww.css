@@ -40,3 +40,40 @@ flex-direction: column; */
     background-color: yellow;
     border: 2px solid black;
 }
+
+.input-div{
+    display: flex;
+    justify-content: space-around;
+    margin:10px 8px 0px 8px;
+}
+.input-section-one{
+    
+    padding: 0 10px;
+    min-height: 102px;
+}
+
+.input-field{
+    padding: 10px 10px 10px 2px;
+    display: block;
+    /* width: 100%; */
+    border: none;
+    border-bottom: 1px solid black;
+    box-shadow: none;
+    /* background-color: red; */
+    color: black;
+}
+/* -------------- */
+.main-output{
+    border: 1px solid black;
+}
+.output-container{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px dashed black;
+}
+.order-charge{
+    border: 1px dotted black;
+}
+.charge-breakup{
+    
+}
