@@ -8,18 +8,18 @@ function EquityGroww() {
       <div className="input-container">
         <div className="tab-container">
           <div className="tabs">
-            <div className="tab-item">Equity Delivery - Buy</div>
-            <div className="tab-item">Equity Delivery - Sell</div>
+            <div className="tab-item lt-mar amount-heading-font">Delivery - Buy</div>
+            <div className="tab-item rt-mar amount-heading-font">Delivery - Sell</div>
           </div>
           <div className="input-div">
             <div className="input-section-one">
-              <div>
+              <div className="input-label amount-heading-font">
                 <label htmlFor="shares">Shares to Buy</label>
                 <br />
               </div>
               <div className="input-area">
                 <input
-                  className="input-field"
+                  className="input-field amount-font"
                   id="shares"
                   type="number"
                   autocomplete="off"
@@ -29,13 +29,13 @@ function EquityGroww() {
               </div>
             </div>
             <div className="input-section-one">
-              <div>
-                <label htmlFor="price">Price of the Shares</label>
+              <div className="input-label amount-heading-font">
+                <label htmlFor="price">Share Price</label>
                 <br />
               </div>
               <div className="input-area">
                 <input
-                  className="input-field"
+                  className="input-field amount-font"
                   id="price"
                   type="number"
                   autocomplete="off"

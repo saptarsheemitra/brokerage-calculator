@@ -8,59 +8,76 @@
 }
 
 .input-container{
-    padding: 40px;
+    padding: 32px 51px;
+    margin: 16px 10px;
+    width: 50%;
     display: flex;
-    flex-direction: column;
-    border: 2px solid black;
+    height: inherit;
+    /* border: 2px solid black; */
 }
 
 .tab-container{
-
-width: 100%;
-/* position: relative; */
-/* max-height: 55px; */
-border: 2px solid red;
-/* display: flex;
-flex-direction: column; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 32px 35px;
+    border-radius: 22px;
+    box-shadow: 0px 0px 6px black;
+    /* border: 2px solid red; */
 }
 .tabs{
     display: flex;
     align-items: center;
-   
-    padding: 10px;
-    border: 2px solid black;
+    justify-content: space-evenly;
+    padding: 13px 13px;
+    /* border: 2px solid black; */
 }
 .tab-item{
-    height: 35px;
+    height: 37px;
     line-height: 35px;
-    padding: 0 20px;
-    margin-right: 10px;
+    padding: 0px 19px;
+    /* margin-right: 0px; */
     cursor: pointer;
-    letter-spacing: .5px;
-    background-color: yellow;
+    letter-spacing: 1px;
+    border-radius: 29px;
     border: 2px solid black;
+    /* background-color: yellow; */
 }
-
+.rt-mar-btn{
+margin-right: 0px;
+}
+.lt-mar-btn{
+    margin-left: 0px;
+}
 .input-div{
     display: flex;
-    justify-content: space-around;
-    margin:10px 8px 0px 8px;
+    justify-content: space-evenly;
+    padding: 13px 13px;
+    /* border: 2px solid black; */
 }
 .input-section-one{
-    
-    padding: 0 10px;
-    min-height: 102px;
+    padding: 8px 0px 8px 4px;
+    width: 30%;
+    cursor: pointer;
+    letter-spacing: 1px;
+    /* border: 2px solid black; */
 }
-
+.input-label{
+    display: flex;
+    justify-content: flex-start;
+    padding: 1px 0px 6px 0px;
+}
 .input-field{
-    padding: 10px 10px 10px 2px;
-    display: block;
-    /* width: 100%; */
+    padding: 2px 0px 2px 0px;
+    width: 85%;
+    height: 18px;
     border: none;
     border-bottom: 1px solid black;
     box-shadow: none;
-    /* background-color: red; */
+    background-color: aqua;
     color: black;
+    outline: none;
 }
 /* -----EquityBuyG--------- */
 .main-output{
@@ -69,15 +86,61 @@ flex-direction: column; */
 .output-container{
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px dashed black;
+    border-bottom: 1px solid black;
+    padding: 19px 10px 20px 10px
 }
 .order-charge{
-    border: 1px dotted black;
+    padding: 3px 7px 3px 7px;
+    /* border: 1px dotted black; */
 }
-.charge-breakup{
-    /* display: inline; */
+/* .charge-breakup{
+    margin: 11px 14px 11px 14px;
+    padding: 16px 7px 21px 7px;
+} */
+.breakup-heading{
+    display: flex;
+    justify-content: space-around;
+    padding: 9px 0px 10px 0px;
+    margin: 7px 0px 7px 0px;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    border-bottom: 1px dashed black;
+}
+.amount-heading{
+    padding: 9px 0px 1px 0px;
+    margin: 0px 0px 0px 10px;
+    
 }
 .amount-show{
     display: flex;
     justify-content: space-between;
+    margin: 11px 14px 11px 14px;
 }
+.space-padding{
+    padding: 5px 0px;
+}
+.amount-font{
+    font-size: 95%;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+.amount-heading-font{
+    font-weight: bold;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+/* ----Romoving input type arrow------- */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ----------------------------------- */
