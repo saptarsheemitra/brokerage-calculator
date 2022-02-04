@@ -1,5 +1,8 @@
 import "./equityGroww.css";
-function EquityBuyG() {
+function EquityBuyG(props) {
+  // var a= props.shareP;
+  // var b = props.shareQ;
+  // console.log(a+b)
   return (
     <div className="main-output">
       <div className="output-container">
@@ -20,7 +23,7 @@ function EquityBuyG() {
         </div>
       </div>
       <div className="charge-breakup">
-        <div className="breakup-heading">Breakup Charge for Groww</div>
+        <div className="breakup-heading">Breakup Charge for Buy</div>
         <div className="space-padding"></div>
         <div className="amount-heading amount-heading-font">Groww Charges</div>
         <div className="amount-show amount-font">
