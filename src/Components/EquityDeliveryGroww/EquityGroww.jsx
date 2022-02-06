@@ -1,23 +1,47 @@
-import { React, useEffect } from "react";
+import { React,useState, useEffect } from "react";
 import "./equityGroww.css";
 import EquityBuyG from "./EquityBuyG";
 
 function EquityGroww() {
-  var quantity;
-  var price;
-  function amountInputHandler() {
-    quantity = document.getElementById("shares").value;
-    price = document.getElementById("price").value;
-    if (!price) {
-      price = 0;
+  const[quantity,setQuantity]=useState(0);
+  const[price,setPrice] = useState(0);
+  
+  function quantityInputHandler(e) {
+    if (!e.target.value) {
+      setQuantity(0)
+      document.getElementById("qty-error").innerHTML = ""
     }
-    if (!quantity) {
-      quantity = 0;
+    else if(e.target.value < 0 || e.target.value == 0 ){
+      setQuantity(0)
+      document.getElementById("qty-error").innerHTML = "Value must be greater than 0!"
     }
-    // console.log(quantity,price)
-    // document.getElementById("demo").innerHTML = x;
+    else{
+      setQuantity(e.target.value)
+      document.getElementById("qty-error").innerHTML = ""
+
+    }
   }
-  console.log(quantity, price);
+  function priceInputHandler(e) {
+    if (!e.target.value) {
+      setPrice(0)
+      document.getElementById("price-error").innerHTML = "<br />"
+    }
+    else if(e.target.value < 0 || e.target.value == 0){
+      setPrice(0)
+      document.getElementById("price-error").innerHTML = "Value must be greater than 0!"
+    }
+    else{
+      setPrice(e.target.value)
+      document.getElementById("price-error").innerHTML = "<br />"
+    }
+  }
+  // function check(){
+  //   console.log(quantity,price);
+  // }
+  // useEffect(()=>{
+  //   check()
+  // },[price,quantity])
+  
   return (
     <div className="container">
       <div className="input-container">
@@ -26,7 +50,7 @@ function EquityGroww() {
             <div className="tab-item lt-mar amount-heading-font">
               Delivery - Buy
             </div>
-            <div className="tab-item rt-mar amount-heading-font">
+            <div className="tab-item rt-mar amount-heading-font" >
               Delivery - Sell
             </div>
           </div>
@@ -39,12 +63,14 @@ function EquityGroww() {
               <div className="input-area">
                 <input
                   className="input-field amount-font"
-                  onKeyUp={amountInputHandler}
-                  id="shares"
+                  onChange={quantityInputHandler}
+                  id="quantity"
                   type="number"
-                  placeholder="Test1"
+                  placeholder="Quantity of the shares"
+                  autoComplete="off"
                   required
                 />
+                <div id="qty-error"><br /></div>
               </div>
             </div>
             <div className="input-section-one">
@@ -55,17 +81,20 @@ function EquityGroww() {
               <div className="input-area">
                 <input
                   className="input-field amount-font"
-                  onKeyUp={amountInputHandler}
+                  onChange={priceInputHandler}
                   id="price"
                   type="number"
-                  placeholder="Test2"
+                  placeholder="Price of the shares"
+                  autoComplete="off"
                   required
                 />
+                <div id="price-error"><br /></div>
               </div>
             </div>
           </div>
           {/* -------------- */}
-          <EquityBuyG />
+
+          <EquityBuyG p={price} q={quantity}  />
         </div>
       </div>
     </div>
