@@ -1,13 +1,13 @@
 import Nav from "../Components/Navbar/Nav";
-import Test from "../Components/EquityDeliveryGroww/EquityGroww"
+import Groww from "../Components/EquityDeliveryGroww/EquityGroww"
+import Zerodha from "../Components/EquityDeliveryZerodha/EquityZerodha"
 function Home() {
   return (
     <div>
       {/* <Nav /> */}
-      <div>
-      brokerage calculator
-      </div>
-      <Test/>
+      {/* <Groww/> */}
+      <Zerodha/>
+
     </div>
   );
 }

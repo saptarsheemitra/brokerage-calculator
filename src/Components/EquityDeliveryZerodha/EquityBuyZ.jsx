@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import "./equityGroww.css";
-function EquityBuyG(props) {
+import "./equityZerodha.css";
+
+function EquityBuyZ(props) {
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
@@ -122,4 +123,4 @@ function EquityBuyG(props) {
     </div>
   );
 }
-export default EquityBuyG;
+export default EquityBuyZ;

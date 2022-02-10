@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import "./equityGroww.css";
-function EquityBuyG(props) {
+import "./equityZerodha.css";
+
+function EquitySellZ(props) {
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
@@ -14,7 +15,6 @@ function EquityBuyG(props) {
   );
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
-  const stampC = (totalValue * 0.00015).toFixed(2);
   const tempGST = parseFloat(brokerage) + parseFloat(etC);
   const gstC = (parseFloat(tempGST) * 0.18).toFixed(2);
   const totalCharge = (
@@ -22,26 +22,24 @@ function EquityBuyG(props) {
     parseFloat(sttC) +
     parseFloat(etC) +
     parseFloat(sebiC) +
-    parseFloat(stampC) +
     parseFloat(gstC)
   ).toFixed(2);
-  const netValue = (parseFloat(totalValue) + parseFloat(totalCharge)).toFixed(
+  const netValue = (parseFloat(totalValue) - parseFloat(totalCharge)).toFixed(
     2
   );
 
-  function valueChangeHandler(){
+  function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
     document.getElementById("total-charges").innerHTML = totalCharge;
     document.getElementById("net-amount").innerHTML = netValue;
     document.getElementById("brokerage-charges").innerHTML = brokerage;
     document.getElementById("stt-charges").innerHTML = sttC;
-    document.getElementById("ext-charges").innerHTML = etC
+    document.getElementById("ext-charges").innerHTML = etC;
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
-    document.getElementById("stamp-charge").innerHTML = stampC;
   }
-  useEffect(()=>{
-    valueChangeHandler()
+  useEffect(() => {
+    valueChangeHandler();
   });
 
   return (
@@ -51,7 +49,6 @@ function EquityBuyG(props) {
           <div className="amount-heading-font">Total Order Value</div>
           <span className="amount-font">₹ </span>
           <span className="amount-font" id="total-value"></span>
-        
         </div>
         <div className="order-charge">
           <div className="amount-heading-font">Total charges</div>
@@ -65,7 +62,7 @@ function EquityBuyG(props) {
         </div>
       </div>
       <div className="charge-breakup">
-        <div className="breakup-heading">Breakup Charges for Buy</div>
+        <div className="breakup-heading">Breakup Charges for Sell</div>
         <div className="space-padding"></div>
         <div className="amount-heading amount-heading-font">Groww Charges</div>
         <div className="amount-show amount-font">
@@ -108,18 +105,14 @@ function EquityBuyG(props) {
           </div>
         </div>
         <div className="amount-show amount-font">
-          <div>Stamp Duty (0.015%)</div>
-          <div>
-            <span>₹ </span>
-            <span id="stamp-charge"></span>
-          </div>
+          {/* <div><br/></div> */}
         </div>
-
         <div className=" sub-amount-show sub-font">
+          <div>*DP charges are excluded. </div>
           <div>*The above charges are tentative. </div>
         </div>
       </div>
     </div>
   );
 }
-export default EquityBuyG;
+export default EquitySellZ;

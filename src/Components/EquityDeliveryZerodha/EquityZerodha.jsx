@@ -1,10 +1,10 @@
-import { React, useState, useEffect } from "react";
-import "./equityGroww.css";
-import EquityBuyG from "./EquityBuyG";
-import EquitySellG from "./EquitySellG";
-import growwLogo from "./Assets/groww-logo.svg";
+import { React, useState} from "react";
+import "./equityZerodha.css";
+import EquityBuyZ from "./EquityBuyZ";
+import EquitySellZ from "./EquitySellZ";
+import zerodhaLogo from "./Assets/zerodha-logo.svg";
 
-function EquityGroww() {
+function EquityZerodha() {
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [deliveryType, setDeliveryType] = useState("false");
@@ -41,19 +41,12 @@ function EquityGroww() {
   function updateBuyHandler() {
     setDeliveryType("false");
   }
-  // function check(){
-  //   // (deliveryType==false) ? console.log("Buy"):console.log("Sell")
-  //   console.log(deliveryType)
-  // }
-  // useEffect(()=>{
-  //   check()
-  // },[deliveryType])
 
   return (
     <div className="container">
       <div className="cal-broker-name">
         <div className="cal-name"><h2><b>Brokerage Calculator for</b></h2>{" "} </div>
-        <img src={growwLogo} alt="logo" className="broker-logo" />
+        <img src={zerodhaLogo} alt="logo" className="broker-logo" />
       </div>
       <div className="input-container">
         <div className="tab-container">
@@ -118,9 +111,9 @@ function EquityGroww() {
           </div>
           {/* -------------- */}
           {deliveryType == "false" ? (
-            <EquityBuyG p={price} q={quantity} />
+            <EquityBuyZ p={price} q={quantity} />
           ) : (
-            <EquitySellG p={price} q={quantity} />
+            <EquitySellZ p={price} q={quantity} />
           )}
         </div>
       </div>
@@ -128,4 +121,4 @@ function EquityGroww() {
   );
 }
 
-export default EquityGroww;
+export default EquityZerodha;

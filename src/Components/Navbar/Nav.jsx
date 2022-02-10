@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import css from "./nav.module.css";
 function Nav() {
   useEffect(() => {
@@ -64,7 +64,8 @@ function Nav() {
           <li className={css.navitems}>Equity Delivery</li>  
           {/* </Link> */}
           <li className={css.navitems}>Intraday</li>
-          <li className={css.navitems}>TesT</li>
+          <li className={css.navitems}>About</li>
+          <li className={css.navitems}>Feedback</li>
         </ul>
         <div className={css.darkmodelogo}>
         <img src={""} className="logo" alt="DarkMode" />
