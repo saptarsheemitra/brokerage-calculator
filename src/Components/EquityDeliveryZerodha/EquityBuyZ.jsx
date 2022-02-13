@@ -5,11 +5,11 @@ function EquityBuyZ(props) {
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
-  var tempBrokerage = (totalValue * 0.0005).toFixed(2);
-  if (tempBrokerage > 20) {
-    tempBrokerage = 20;
-  }
-  const brokerage = parseFloat(tempBrokerage).toFixed(2);
+  // var tempBrokerage = (totalValue * 0.0005).toFixed(2);
+  // if (tempBrokerage > 20) {
+  //   tempBrokerage = 20; 
+  // }
+  const brokerage = 0;
   const sttC = Math.round(
     parseFloat(parseFloat(totalValue * 0.001).toFixed(2))
   );

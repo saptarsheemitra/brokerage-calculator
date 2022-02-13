@@ -1,6 +1,7 @@
 import { React, useEffect } from "react";
-// import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import css from "./nav.module.css";
+import "./test.css"
 function Nav() {
   useEffect(() => {
     function showLandingTime() {
@@ -60,10 +61,22 @@ function Nav() {
       <div className={css.navmain}>
         <ul className={css.navlist}>
         <li className={css.navitems}>Home</li>
-          {/* <Link */}
-          <li className={css.navitems}>Equity Delivery</li>  
-          {/* </Link> */}
-          <li className={css.navitems}>Intraday</li>
+          <li className={css.navitems}>Equity Delivery
+		      <ul className={css.dropmenu}>
+            {/* <Link to={"/ed-zerodha"}> */}
+			      <li className={css.droplist}> Zerodha </li>
+            {/* </Link> */}
+			      <li className={css.droplist}> Groww </li>
+			      <li className={css.droplist}> Upstocks </li>
+		      </ul> 
+          </li>  
+          <li className={css.navitems}>Intraday
+          <ul className={css.dropmenu}>
+			      <li className={css.droplist}> Zerodha </li>
+			      <li className={css.droplist}> Groww </li>
+			      <li className={css.droplist}> Upstocks </li>
+		      </ul>
+          </li>
           <li className={css.navitems}>About</li>
           <li className={css.navitems}>Feedback</li>
         </ul>
