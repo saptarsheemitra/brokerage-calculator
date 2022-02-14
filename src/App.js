@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Link, Switch, Route, Routes } from "react-router-dom";
+import Layout from "./Pages/Layout"
 import Home from "./Pages/Home";
 import Nav from "./Components/Navbar/Nav";
-import Test from "./Components/Navbar/testnav"
+import Zerodha from "./Components/EquityDeliveryZerodha/EquityZerodha"
  function App() {
    return (
-     <div>
+     <Layout>
        {/* <Test/> */}
        <Nav/>
        <Home/>
        {/* <Router>
-        <Nav/>
-        <Switch>
-        <Route exact path="/ed-zerodha" component={Home} />
-        </Switch>
-       </Router> */}
-     </div>
+        <Route path="/" element={<Zerodha/>} /> */}
+        {/* <Route path="/new-meetup" element={<NewMeetupsPage />} /> */}
+        {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+      {/* </Router> */}
+      </Layout>
   );
 }
 
