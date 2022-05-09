@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./equityGroww.css";
 import EquityBuyG from "./EquityBuyG";
 import EquitySellG from "./EquitySellG";
@@ -13,7 +13,7 @@ function EquityGroww() {
     if (!e.target.value) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML = "";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML =
         "Value must be greater than 0!";
@@ -26,7 +26,7 @@ function EquityGroww() {
     if (!e.target.value) {
       setPrice(0);
       document.getElementById("price-error").innerHTML = "<br />";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setPrice(0);
       document.getElementById("price-error").innerHTML =
         "Value must be greater than 0!";
@@ -60,14 +60,14 @@ function EquityGroww() {
           <div className="tabs">
             <div
               className="tab-item lt-mar amount-heading-font "
-              id={deliveryType == "false" ? "active-btn" :"" }
+              id={deliveryType === "false" ? "active-btng" :"" }
               onClick={updateBuyHandler}
             >
               Delivery - Buy
             </div>
             <div
               className="tab-item rt-mar amount-heading-font"
-              id={deliveryType == "false" ? "" :"active-btn" }
+              id={deliveryType === "false" ? "" :"active-btng" }
               onClick={updateSellHandler}
             >
               Delivery - Sell
@@ -117,7 +117,7 @@ function EquityGroww() {
             </div>
           </div>
           {/* -------------- */}
-          {deliveryType == "false" ? (
+          {deliveryType === "false" ? (
             <EquityBuyG p={price} q={quantity} />
           ) : (
             <EquitySellG p={price} q={quantity} />

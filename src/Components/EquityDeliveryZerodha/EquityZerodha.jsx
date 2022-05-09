@@ -13,7 +13,7 @@ function EquityZerodha() {
     if (!e.target.value) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML = "";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML =
         "Value must be greater than 0!";
@@ -26,7 +26,7 @@ function EquityZerodha() {
     if (!e.target.value) {
       setPrice(0);
       document.getElementById("price-error").innerHTML = "<br />";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setPrice(0);
       document.getElementById("price-error").innerHTML =
         "Value must be greater than 0!";
@@ -53,14 +53,14 @@ function EquityZerodha() {
           <div className="tabs">
             <div
               className="tab-item lt-mar amount-heading-font "
-              id={deliveryType == "false" ? "active-btn" :"" }
+              id={deliveryType === "false" ? "active-btnz" :"" }
               onClick={updateBuyHandler}
             >
               Delivery - Buy
             </div>
             <div
               className="tab-item rt-mar amount-heading-font"
-              id={deliveryType == "false" ? "" :"active-btn" }
+              id={deliveryType === "false" ? "" :"active-btnz" }
               onClick={updateSellHandler}
             >
               Delivery - Sell
@@ -110,7 +110,7 @@ function EquityZerodha() {
             </div>
           </div>
           {/* -------------- */}
-          {deliveryType == "false" ? (
+          {deliveryType === "false" ? (
             <EquityBuyZ p={price} q={quantity} />
           ) : (
             <EquitySellZ p={price} q={quantity} />

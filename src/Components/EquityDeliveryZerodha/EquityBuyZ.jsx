@@ -10,9 +10,7 @@ function EquityBuyZ(props) {
   //   tempBrokerage = 20; 
   // }
   const brokerage = 0;
-  const sttC = Math.round(
-    parseFloat(parseFloat(totalValue * 0.001).toFixed(2))
-  );
+  const sttC = parseFloat(totalValue * 0.001).toFixed(2);
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
   const stampC = (totalValue * 0.00015).toFixed(2);
@@ -68,7 +66,7 @@ function EquityBuyZ(props) {
       <div className="charge-breakup">
         <div className="breakup-heading">Breakup Charges for Buy</div>
         <div className="space-padding"></div>
-        <div className="amount-heading amount-heading-font">Groww Charges</div>
+        <div className="amount-heading amount-heading-font">Zerodha Charges</div>
         <div className="amount-show amount-font">
           <div>Brokerage</div>
           <div>

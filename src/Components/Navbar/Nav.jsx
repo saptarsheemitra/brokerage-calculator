@@ -1,5 +1,4 @@
 import { React, useEffect } from "react";
-import {Link } from "react-router-dom";
 import css from "./nav.module.css";
 function Nav() {
   useEffect(() => {
@@ -20,7 +19,7 @@ function Nav() {
     function showLandingDate() {
       let d = new Date();
       const weekday = new Array(7);
-      const months = new Array();
+      const months = new Array(12);
       weekday[0] = "Sun";
       weekday[1] = "Mon";
       weekday[2] = "Tues";
@@ -52,22 +51,32 @@ function Nav() {
     showLandingTime();
     showLandingDate();
   });
+  const homeRoute = () => {
+    window.location.pathname= "/"
+  }
+  const zerodhaRoute = () => {
+    window.location.pathname="/zerodha-ed"
+  }
+  const growwRoute = () => {
+    window.location.pathname="/groww-ed"
+  }
+  const upstoxRoute = () => {
+    window.location.pathname="/upstox-ed"
+  }
+
   return (
     <div className={css.navcontainer}>
-      <div className={css.navlogo}>
+      <div className={css.navlogo} onClick={homeRoute}>
         <img src={""} className="logo" alt="Logo" />
       </div>
       <div className={css.navmain}>
         <ul className={css.navlist}>
-        <li className={css.navitems}> Home</li>
+        <li className={css.navitems} onClick={homeRoute}> Home</li>
           <li className={css.navitems}>Equity Delivery
 		      <ul className={css.dropmenu}>
-            {/* <Link to={"/ed-zerodha"}> */}
-			      {/* <li className={css.droplist}><Link to={"/ed-zerodha"}>  Zerodha </Link> </li> */}
-            <li className={css.droplist}> Zerodha </li>
-            {/* </Link> */}
-			      <li className={css.droplist}> Groww </li>
-			      <li className={css.droplist}> Upstocks </li>
+            <li className={css.droplist} onClick={zerodhaRoute}> Zerodha </li>
+			      <li className={css.droplist} onClick={growwRoute}> Groww </li>
+			      <li className={css.droplist} onClick={upstoxRoute}> Upstocks </li>
 		      </ul> 
           </li>  
           <li className={css.navitems}>Intraday

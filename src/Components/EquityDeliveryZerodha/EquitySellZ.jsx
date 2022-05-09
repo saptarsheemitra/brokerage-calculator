@@ -1,18 +1,16 @@
+  // *****************Imports*****************
 import { useEffect } from "react";
-import "./equityZerodha.css";
+import "./equityZerodha.css";  //CSS import
+// ******************************************
 
 function EquitySellZ(props) {
+
+  // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
-  // var tempBrokerage = (totalValue * 0.0005).toFixed(2);
-  // if (tempBrokerage > 20) {
-  //   tempBrokerage = 20;
-  // }
   const brokerage = 0;
-  const sttC = Math.round(
-    parseFloat(parseFloat(totalValue * 0.001).toFixed(2))
-  );
+  const sttC = parseFloat(totalValue * 0.001).toFixed(2);
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
   const tempGST = parseFloat(brokerage) + parseFloat(etC);
@@ -28,6 +26,9 @@ function EquitySellZ(props) {
     2
   );
 
+  // *********************************************************************
+
+    // *****************Functions to insert value into HTML element*****************
   function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
     document.getElementById("total-charges").innerHTML = totalCharge;
@@ -38,9 +39,14 @@ function EquitySellZ(props) {
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
   }
+  // ********************************************************************************
+
+  // ********Function call to re-render the component*********
+
   useEffect(() => {
     valueChangeHandler();
   });
+  // ****************************************************
 
   return (
     <div className="main-output">
@@ -64,7 +70,7 @@ function EquitySellZ(props) {
       <div className="charge-breakup">
         <div className="breakup-heading">Breakup Charges for Sell</div>
         <div className="space-padding"></div>
-        <div className="amount-heading amount-heading-font">Groww Charges</div>
+        <div className="amount-heading amount-heading-font">Zerodha Charges</div>
         <div className="amount-show amount-font">
           <div>Brokerage</div>
           <div>
@@ -105,7 +111,6 @@ function EquitySellZ(props) {
           </div>
         </div>
         <div className="amount-show amount-font">
-          {/* <div><br/></div> */}
         </div>
         <div className=" sub-amount-show sub-font">
           <div>*DP charges are excluded. </div>
