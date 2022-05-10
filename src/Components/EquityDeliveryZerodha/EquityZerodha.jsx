@@ -1,13 +1,17 @@
-import { React, useState} from "react";
-import "./equityZerodha.css";
+// *****************Imports*****************
+import { React, useState } from "react";
+import "./equityZerodha.css"; //CSS import
 import EquityBuyZ from "./EquityBuyZ";
 import EquitySellZ from "./EquitySellZ";
-import zerodhaLogo from "./Assets/zerodha-logo.svg";
+import zerodhaLogo from "./Assets/zerodha-logo.svg"; //Logo
+// ******************************************
 
 function EquityZerodha() {
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [deliveryType, setDeliveryType] = useState("false");
+
+  // *****************Functions to check input value of quantity*****************
 
   function quantityInputHandler(e) {
     if (!e.target.value) {
@@ -22,6 +26,10 @@ function EquityZerodha() {
       document.getElementById("qty-error").innerHTML = "";
     }
   }
+
+  // ***********************************************************************
+
+  // *****************Functions to check input value of price*****************
   function priceInputHandler(e) {
     if (!e.target.value) {
       setPrice(0);
@@ -35,17 +43,25 @@ function EquityZerodha() {
       document.getElementById("price-error").innerHTML = "<br />";
     }
   }
+  // ***********************************************************************
+
+  // *****************Function calls*****************
   function updateSellHandler() {
     setDeliveryType("true");
   }
   function updateBuyHandler() {
     setDeliveryType("false");
   }
+  // *******************************************************
 
   return (
     <div className="container">
       <div className="cal-broker-name">
-        <div className="cal-name"><h2><b>Brokerage Calculator for</b></h2>{" "} </div>
+        <div className="cal-name">
+          <h2>
+            <b>Brokerage Calculator for</b>
+          </h2>{" "}
+        </div>
         <img src={zerodhaLogo} alt="logo" className="broker-logo" />
       </div>
       <div className="input-container">
@@ -53,21 +69,20 @@ function EquityZerodha() {
           <div className="tabs">
             <div
               className="tab-item lt-mar amount-heading-font "
-              id={deliveryType === "false" ? "active-btnz" :"" }
+              id={deliveryType === "false" ? "active-btnz" : ""}
               onClick={updateBuyHandler}
             >
               Delivery - Buy
             </div>
             <div
               className="tab-item rt-mar amount-heading-font"
-              id={deliveryType === "false" ? "" :"active-btnz" }
+              id={deliveryType === "false" ? "" : "active-btnz"}
               onClick={updateSellHandler}
             >
               Delivery - Sell
             </div>
           </div>
           <div className="input-div">
-            
             <div className="input-section-one">
               <div className="input-label amount-heading-font">
                 <label htmlFor="price">Share Price</label>
