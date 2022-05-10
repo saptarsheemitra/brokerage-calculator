@@ -1,6 +1,10 @@
+// *****************Imports*****************
 import { useEffect } from "react";
-import "./equityGroww.css";
+import "./equityGroww.css";  //CSS import
+// ******************************************
+
 function EquitySellG(props) {
+  // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
@@ -26,6 +30,9 @@ function EquitySellG(props) {
   const netValue = (parseFloat(totalValue) - parseFloat(totalCharge)).toFixed(
     2
   );
+  // *********************************************************************
+
+  // *****************Functions to insert value into HTML element*****************
 
   function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
@@ -37,9 +44,14 @@ function EquitySellG(props) {
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
   }
+  // ********************************************************************************
+
+  // ********Function call to re-render the component*********
+
   useEffect(() => {
     valueChangeHandler();
   });
+  // ****************************************************
 
   return (
     <div className="main-output">
@@ -103,9 +115,7 @@ function EquitySellG(props) {
             <span id="gst-charges"></span>
           </div>
         </div>
-        <div className="amount-show amount-font">
-          {/* <div><br/></div> */}
-        </div>
+        <div className="amount-show amount-font">{/* <div><br/></div> */}</div>
         <div className=" sub-amount-show sub-font">
           <div>*DP charges are excluded. </div>
           <div>*The above charges are tentative. </div>

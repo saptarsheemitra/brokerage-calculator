@@ -1,6 +1,11 @@
+// *****************Imports*****************
 import { useEffect } from "react";
-import "./equityGroww.css";
+import "./equityGroww.css";  //CSS import
+// ******************************************
+
 function EquityBuyG(props) {
+
+  // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
@@ -28,22 +33,30 @@ function EquityBuyG(props) {
   const netValue = (parseFloat(totalValue) + parseFloat(totalCharge)).toFixed(
     2
   );
+  // *********************************************************************
 
-  function valueChangeHandler(){
+  // *****************Functions to insert value into HTML element*****************
+  function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
     document.getElementById("total-charges").innerHTML = totalCharge;
     document.getElementById("net-amount").innerHTML = netValue;
     document.getElementById("brokerage-charges").innerHTML = brokerage;
     document.getElementById("stt-charges").innerHTML = sttC;
-    document.getElementById("ext-charges").innerHTML = etC
+    document.getElementById("ext-charges").innerHTML = etC;
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
     document.getElementById("stamp-charge").innerHTML = stampC;
   }
-  useEffect(()=>{
-    valueChangeHandler()
+
+  // ********************************************************************************
+
+  // ********Function call to re-render the component*********
+
+  useEffect(() => {
+    valueChangeHandler();
   });
 
+  // ****************************************************
   return (
     <div className="main-output">
       <div className="output-container">
@@ -51,7 +64,6 @@ function EquityBuyG(props) {
           <div className="amount-heading-font">Total Order Value</div>
           <span className="amount-font">₹ </span>
           <span className="amount-font" id="total-value"></span>
-        
         </div>
         <div className="order-charge">
           <div className="amount-heading-font">Total charges</div>

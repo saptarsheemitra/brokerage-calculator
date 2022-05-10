@@ -1,13 +1,16 @@
+// *****************Imports*****************
 import { useEffect } from "react";
-import "./equityUpstox.css";
+import "./equityUpstox.css"; //CSS import
+// ******************************************
 
 function EquityBuyU(props) {
+  // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
   var tempBrokerage = (totalValue * 0.025).toFixed(2);
   if (tempBrokerage > 20) {
-    tempBrokerage = 20; 
+    tempBrokerage = 20;
   }
   const brokerage = tempBrokerage;
   const sttC = parseFloat(totalValue * 0.001).toFixed(2);
@@ -27,21 +30,29 @@ function EquityBuyU(props) {
   const netValue = (parseFloat(totalValue) + parseFloat(totalCharge)).toFixed(
     2
   );
+  // *********************************************************************
 
-  function valueChangeHandler(){
+  // *****************Functions to insert value into HTML element*****************
+
+  function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
     document.getElementById("total-charges").innerHTML = totalCharge;
     document.getElementById("net-amount").innerHTML = netValue;
     document.getElementById("brokerage-charges").innerHTML = brokerage;
     document.getElementById("stt-charges").innerHTML = sttC;
-    document.getElementById("ext-charges").innerHTML = etC
+    document.getElementById("ext-charges").innerHTML = etC;
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
     document.getElementById("stamp-charge").innerHTML = stampC;
   }
-  useEffect(()=>{
-    valueChangeHandler()
+  // ********************************************************************************
+
+  // ********Function call to re-render the component*********
+
+  useEffect(() => {
+    valueChangeHandler();
   });
+  // ****************************************************
 
   return (
     <div className="main-output">
@@ -50,7 +61,6 @@ function EquityBuyU(props) {
           <div className="amount-heading-font">Total Order Value</div>
           <span className="amount-font">₹ </span>
           <span className="amount-font" id="total-value"></span>
-        
         </div>
         <div className="order-charge">
           <div className="amount-heading-font">Total charges</div>
