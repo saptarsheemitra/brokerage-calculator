@@ -54,14 +54,24 @@ function Nav() {
   const homeRoute = () => {
     window.location.pathname= "/"
   }
-  const zerodhaRoute = () => {
+  const zerodhaEDRoute = () => {
     window.location.pathname="/zerodha-ed"
   }
-  const growwRoute = () => {
+  const growwEDRoute = () => {
     window.location.pathname="/groww-ed"
   }
-  const upstoxRoute = () => {
+  const upstoxEDRoute = () => {
     window.location.pathname="/upstox-ed"
+  }
+
+  const zerodhaIntraRoute = () => {
+    window.location.pathname="/zerodha-intra"
+  }
+  const growwIntraRoute = () => {
+    window.location.pathname="/groww-intra"
+  }
+  const upstoxIntraRoute = () => {
+    window.location.pathname="/upstox-intra"
   }
 
   return (
@@ -74,16 +84,16 @@ function Nav() {
         <li className={css.navitems} onClick={homeRoute}> Home</li>
           <li className={css.navitems}>Equity Delivery
 		      <ul className={css.dropmenu}>
-            <li className={css.droplist} onClick={zerodhaRoute}> Zerodha </li>
-			      <li className={css.droplist} onClick={growwRoute}> Groww </li>
-			      <li className={css.droplist} onClick={upstoxRoute}> Upstocks </li>
+            <li className={css.droplist} onClick={zerodhaEDRoute}> Zerodha </li>
+			      <li className={css.droplist} onClick={growwEDRoute}> Groww </li>
+			      <li className={css.droplist} onClick={upstoxEDRoute}> Upstocks </li>
 		      </ul> 
           </li>  
           <li className={css.navitems}>Intraday
           <ul className={css.dropmenu}>
-			      <li className={css.droplist}> Zerodha </li>
-			      <li className={css.droplist}> Groww </li>
-			      <li className={css.droplist}> Upstocks </li>
+			      <li className={css.droplist} onClick={zerodhaIntraRoute}> Zerodha </li>
+			      <li className={css.droplist} onClick={growwIntraRoute}> Groww </li>
+			      <li className={css.droplist} onClick={upstoxIntraRoute}> Upstocks </li>
 		      </ul>
           </li>
           <li className={css.navitems}>About</li>

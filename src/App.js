@@ -2,20 +2,26 @@ import {BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import Nav from "./Components/Navbar/Nav";
-import Zerodha from "./Components/EquityDeliveryZerodha/EquityZerodha";
-import Groww from "./Components/EquityDeliveryGroww/EquityGroww";
-import Upstox from "./Components/EquityDeliveryUpstox/EquityUpstox";
+import ZerodhaED from "./Components/EquityDeliveryZerodha/EquityZerodha";
+import GrowwED from "./Components/EquityDeliveryGroww/EquityGroww";
+import UpstoxED from "./Components/EquityDeliveryUpstox/EquityUpstox";
+import ZerodhaIntra from "./Components/IntradayZerodha/IntraZerodha";
+import GrowwIntra from "./Components/IntradayGroww/IntraGroww";
+import UpstoxIntra from "./Components/IntradayUpstox/IntraUpstox";
+
 function App() {
   return (
     <Layout>
-      {/* <Test/> */}
       <Nav />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="zerodha-ed" element={<Zerodha />} />
-          <Route path="groww-ed" element={<Groww />} />
-          <Route path="upstox-ed" element={<Upstox />} />
+          <Route path="zerodha-ed" element={<ZerodhaED />} />
+          <Route path="groww-ed" element={<GrowwED />} />
+          <Route path="upstox-ed" element={<UpstoxED />} />
+          <Route path="zerodha-intra" element={<ZerodhaIntra />} />
+          <Route path="groww-intra" element={<GrowwIntra />} />
+          <Route path="upstox-intra" element={<UpstoxIntra />} />
         </Routes>
       </Router>
     </Layout>

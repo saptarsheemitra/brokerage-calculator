@@ -57,7 +57,7 @@ function EquityUpstox() {
       <div className="cal-broker-name">
         <div className="cal-name">
           <h2>
-            <b>Brokerage Calculator for</b>
+            <b>Delivery Brokerage Calculator for</b>
           </h2>{" "}
         </div>
         <img src={zerodhaLogo} alt="logo" className="broker-logo" />
@@ -103,7 +103,7 @@ function EquityUpstox() {
             </div>
             <div className="input-section-one">
               <div className="input-label amount-heading-font">
-                <label htmlFor="shares">Shares to Buy</label>
+                <label htmlFor="shares">Share Quantity</label>
                 <br />
               </div>
               <div className="input-area">

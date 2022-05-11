@@ -173,6 +173,6 @@ input[type=number] {
     justify-content: space-between;
     margin: 30px 14px 11px 24px;
 }
-#active-btnz{
-    background-color: royalblue;
+#active-btnu{
+    background-color: rgb(47, 14, 80);
 }

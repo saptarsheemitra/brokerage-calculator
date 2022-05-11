@@ -1,6 +1,10 @@
+// *****************Imports*****************
 import { useEffect } from "react";
-import "./equityGroww.css";
-function EquitySellG(props) {
+import "./intraGroww.css";  //CSS import
+// ******************************************
+
+function IntraSellG(props) {
+  // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
@@ -10,7 +14,7 @@ function EquitySellG(props) {
   }
   const brokerage = parseFloat(tempBrokerage).toFixed(2);
   const sttC = Math.round(
-    parseFloat(parseFloat(totalValue * 0.001).toFixed(2))
+    parseFloat(parseFloat(totalValue * 0.00025).toFixed(2))
   );
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
@@ -26,6 +30,9 @@ function EquitySellG(props) {
   const netValue = (parseFloat(totalValue) - parseFloat(totalCharge)).toFixed(
     2
   );
+  // *********************************************************************
+
+  // *****************Functions to insert value into HTML element*****************
 
   function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
@@ -37,9 +44,14 @@ function EquitySellG(props) {
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
   }
+  // ********************************************************************************
+
+  // ********Function call to re-render the component*********
+
   useEffect(() => {
     valueChangeHandler();
   });
+  // ****************************************************
 
   return (
     <div className="main-output">
@@ -76,7 +88,7 @@ function EquitySellG(props) {
           Regulatory Charges
         </div>
         <div className="amount-show amount-font">
-          <div>STT Charges (0.1%)</div>
+          <div>STT Charges (0.025%)</div>
           <div>
             <span className="">₹ </span>
             <span id="stt-charges"></span>
@@ -103,9 +115,7 @@ function EquitySellG(props) {
             <span id="gst-charges"></span>
           </div>
         </div>
-        <div className="amount-show amount-font">
-          {/* <div><br/></div> */}
-        </div>
+        <div className="amount-show amount-font">{/* <div><br/></div> */}</div>
         <div className=" sub-amount-show sub-font">
           <div>*DP charges are excluded. </div>
           <div>*The above charges are tentative. </div>
@@ -114,4 +124,4 @@ function EquitySellG(props) {
     </div>
   );
 }
-export default EquitySellG;
+export default IntraSellG;

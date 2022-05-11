@@ -5,17 +5,15 @@ function IntraBuyZ(props) {
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
   const totalValue = price * quantity;
-  // var tempBrokerage = (totalValue * 0.0005).toFixed(2);
-  // if (tempBrokerage > 20) {
-  //   tempBrokerage = 20; 
-  // }
-  const brokerage = 0;
-  const sttC = Math.round(
-    parseFloat(parseFloat(totalValue * 0.001).toFixed(2))
-  );
+  var tempBrokerage = (totalValue * 0.0003).toFixed(2);
+  if (tempBrokerage > 20) {
+    tempBrokerage = 20; 
+  }
+  const brokerage = tempBrokerage;
+  const sttC = 0;
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
-  const stampC = (totalValue * 0.00015).toFixed(2);
+  const stampC = (totalValue * 0.00003).toFixed(2);
   const tempGST = parseFloat(brokerage) + parseFloat(etC);
   const gstC = (parseFloat(tempGST) * 0.18).toFixed(2);
   const totalCharge = (
@@ -68,7 +66,7 @@ function IntraBuyZ(props) {
       <div className="charge-breakup">
         <div className="breakup-heading">Breakup Charges for Buy</div>
         <div className="space-padding"></div>
-        <div className="amount-heading amount-heading-font">Groww Charges</div>
+        <div className="amount-heading amount-heading-font">Zerodha Charges</div>
         <div className="amount-show amount-font">
           <div>Brokerage</div>
           <div>
@@ -81,7 +79,7 @@ function IntraBuyZ(props) {
           Regulatory Charges
         </div>
         <div className="amount-show amount-font">
-          <div>STT Charges (0.1%)</div>
+          <div>STT Charges (0%)</div>
           <div>
             <span className="">₹ </span>
             <span id="stt-charges"></span>
@@ -109,7 +107,7 @@ function IntraBuyZ(props) {
           </div>
         </div>
         <div className="amount-show amount-font">
-          <div>Stamp Duty (0.015%)</div>
+          <div>Stamp Duty (0.003%)</div>
           <div>
             <span>₹ </span>
             <span id="stamp-charge"></span>

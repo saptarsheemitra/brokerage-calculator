@@ -1,10 +1,9 @@
 // *****************Imports*****************
 import { useEffect } from "react";
-import "./intraGroww.css";  //CSS import
+import "./intraUpstox.css";  //CSS import
 // ******************************************
 
-function IntraBuyG(props) {
-
+function IntraSellU(props) {
   // *****************Calculations*****************
   const price = parseFloat(props.p);
   const quantity = parseInt(props.q, 10);
@@ -14,10 +13,9 @@ function IntraBuyG(props) {
     tempBrokerage = 20;
   }
   const brokerage = parseFloat(tempBrokerage).toFixed(2);
-  const sttC = 0;
+  const sttC = parseFloat(totalValue * 0.00025).toFixed(2);
   const etC = (totalValue * 0.0000345).toFixed(2);
   const sebiC = (totalValue * 0.000001).toFixed(2);
-  const stampC = (totalValue * 0.00003).toFixed(2);
   const tempGST = parseFloat(brokerage) + parseFloat(etC);
   const gstC = (parseFloat(tempGST) * 0.18).toFixed(2);
   const totalCharge = (
@@ -25,15 +23,15 @@ function IntraBuyG(props) {
     parseFloat(sttC) +
     parseFloat(etC) +
     parseFloat(sebiC) +
-    parseFloat(stampC) +
     parseFloat(gstC)
   ).toFixed(2);
-  const netValue = (parseFloat(totalValue) + parseFloat(totalCharge)).toFixed(
+  const netValue = (parseFloat(totalValue) - parseFloat(totalCharge)).toFixed(
     2
   );
   // *********************************************************************
 
   // *****************Functions to insert value into HTML element*****************
+
   function valueChangeHandler() {
     document.getElementById("total-value").innerHTML = totalValue;
     document.getElementById("total-charges").innerHTML = totalCharge;
@@ -43,9 +41,7 @@ function IntraBuyG(props) {
     document.getElementById("ext-charges").innerHTML = etC;
     document.getElementById("sebi-charges").innerHTML = sebiC;
     document.getElementById("gst-charges").innerHTML = gstC;
-    document.getElementById("stamp-charge").innerHTML = stampC;
   }
-
   // ********************************************************************************
 
   // ********Function call to re-render the component*********
@@ -53,8 +49,8 @@ function IntraBuyG(props) {
   useEffect(() => {
     valueChangeHandler();
   });
-
   // ****************************************************
+
   return (
     <div className="main-output">
       <div className="output-container">
@@ -75,9 +71,9 @@ function IntraBuyG(props) {
         </div>
       </div>
       <div className="charge-breakup">
-        <div className="breakup-heading">Breakup Charges for Buy</div>
+        <div className="breakup-heading">Breakup Charges for Sell</div>
         <div className="space-padding"></div>
-        <div className="amount-heading amount-heading-font">Groww Charges</div>
+        <div className="amount-heading amount-heading-font">Upstox Charges</div>
         <div className="amount-show amount-font">
           <div>Brokerage</div>
           <div>
@@ -90,7 +86,7 @@ function IntraBuyG(props) {
           Regulatory Charges
         </div>
         <div className="amount-show amount-font">
-          <div>STT Charges (0%)</div>
+          <div>STT Charges (0.025%)</div>
           <div>
             <span className="">₹ </span>
             <span id="stt-charges"></span>
@@ -117,19 +113,13 @@ function IntraBuyG(props) {
             <span id="gst-charges"></span>
           </div>
         </div>
-        <div className="amount-show amount-font">
-          <div>Stamp Duty (0.003%)</div>
-          <div>
-            <span>₹ </span>
-            <span id="stamp-charge"></span>
-          </div>
-        </div>
-
+        <div className="amount-show amount-font">{/* <div><br/></div> */}</div>
         <div className=" sub-amount-show sub-font">
+          <div>*DP charges are excluded. </div>
           <div>*The above charges are tentative. </div>
         </div>
       </div>
     </div>
   );
 }
-export default IntraBuyG;
+export default IntraSellU;

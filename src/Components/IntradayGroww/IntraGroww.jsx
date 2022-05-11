@@ -1,19 +1,23 @@
-import { React, useState, useEffect } from "react";
-import "./equityGroww.css";
-import EquityBuyG from "./EquityBuyG";
-import EquitySellG from "./EquitySellG";
-import growwLogo from "./Assets/groww-logo.svg";
+// *****************Imports*****************
+import { React, useState } from "react";
+import "./intraGroww.css"; //CSS import
+import IntraBuyG from "./IntraBuyG";
+import IntraSellG from "./IntraSellG";
+import growwLogo from "./Assets/groww-logo.svg"; //Logo
+// ******************************************
 
-function EquityGroww() {
+function IntraGroww() {
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [deliveryType, setDeliveryType] = useState("false");
+
+  // *****************Functions to check input value of quantity*****************
 
   function quantityInputHandler(e) {
     if (!e.target.value) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML = "";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setQuantity(0);
       document.getElementById("qty-error").innerHTML =
         "Value must be greater than 0!";
@@ -22,11 +26,15 @@ function EquityGroww() {
       document.getElementById("qty-error").innerHTML = "";
     }
   }
+
+  // ***********************************************************************
+
+  // *****************Functions to check input value of price*****************
   function priceInputHandler(e) {
     if (!e.target.value) {
       setPrice(0);
       document.getElementById("price-error").innerHTML = "<br />";
-    } else if (e.target.value < 0 || e.target.value == 0) {
+    } else if (e.target.value < 0 || e.target.value === 0) {
       setPrice(0);
       document.getElementById("price-error").innerHTML =
         "Value must be greater than 0!";
@@ -35,46 +43,47 @@ function EquityGroww() {
       document.getElementById("price-error").innerHTML = "<br />";
     }
   }
+  // ***********************************************************************
+
+  // *****************Function calls*****************
   function updateSellHandler() {
     setDeliveryType("true");
   }
   function updateBuyHandler() {
     setDeliveryType("false");
   }
-  // function check(){
-  //   // (deliveryType==false) ? console.log("Buy"):console.log("Sell")
-  //   console.log(deliveryType)
-  // }
-  // useEffect(()=>{
-  //   check()
-  // },[deliveryType])
+  // *******************************************************
 
   return (
     <div className="container">
       <div className="cal-broker-name">
-        <div className="cal-name"><h2><b>Brokerage Calculator for</b></h2>{" "} </div>
+        <div className="cal-name">
+          <h3><b>Intraday Brokerage Calculator for</b></h3>
+        </div>
         <img src={growwLogo} alt="logo" className="broker-logo" />
       </div>
+      
       <div className="input-container">
+        
         <div className="tab-container">
+        
           <div className="tabs">
             <div
               className="tab-item lt-mar amount-heading-font "
-              id={deliveryType == "false" ? "active-btn" :"" }
+              id={deliveryType === "false" ? "active-btng" : ""}
               onClick={updateBuyHandler}
             >
-              Delivery - Buy
+              Intraday - Buy
             </div>
             <div
               className="tab-item rt-mar amount-heading-font"
-              id={deliveryType == "false" ? "" :"active-btn" }
+              id={deliveryType === "false" ? "" : "active-btng"}
               onClick={updateSellHandler}
             >
-              Delivery - Sell
+              Intraday - Sell
             </div>
           </div>
           <div className="input-div">
-            
             <div className="input-section-one">
               <div className="input-label amount-heading-font">
                 <label htmlFor="price">Share Price</label>
@@ -97,7 +106,7 @@ function EquityGroww() {
             </div>
             <div className="input-section-one">
               <div className="input-label amount-heading-font">
-                <label htmlFor="shares">Shares to Buy</label>
+                <label htmlFor="shares">Share Quantity</label>
                 <br />
               </div>
               <div className="input-area">
@@ -117,10 +126,10 @@ function EquityGroww() {
             </div>
           </div>
           {/* -------------- */}
-          {deliveryType == "false" ? (
-            <EquityBuyG p={price} q={quantity} />
+          {deliveryType === "false" ? (
+            <IntraBuyG p={price} q={quantity} />
           ) : (
-            <EquitySellG p={price} q={quantity} />
+            <IntraSellG p={price} q={quantity} />
           )}
         </div>
       </div>
@@ -128,4 +137,4 @@ function EquityGroww() {
   );
 }
 
-export default EquityGroww;
+export default IntraGroww;

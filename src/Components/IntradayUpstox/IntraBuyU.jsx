@@ -1,9 +1,9 @@
 // *****************Imports*****************
 import { useEffect } from "react";
-import "./intraGroww.css";  //CSS import
+import "./intraUpstox.css";  //CSS import
 // ******************************************
 
-function IntraBuyG(props) {
+function IntraBuyU(props) {
 
   // *****************Calculations*****************
   const price = parseFloat(props.p);
@@ -77,7 +77,7 @@ function IntraBuyG(props) {
       <div className="charge-breakup">
         <div className="breakup-heading">Breakup Charges for Buy</div>
         <div className="space-padding"></div>
-        <div className="amount-heading amount-heading-font">Groww Charges</div>
+        <div className="amount-heading amount-heading-font">Upstox Charges</div>
         <div className="amount-show amount-font">
           <div>Brokerage</div>
           <div>
@@ -132,4 +132,4 @@ function IntraBuyG(props) {
     </div>
   );
 }
-export default IntraBuyG;
+export default IntraBuyU;

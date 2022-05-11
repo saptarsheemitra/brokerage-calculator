@@ -1,13 +1,17 @@
-import { React, useState} from "react";
-import "./IntraZerodha.css";
-import IntraBuyZ from "./IntraBuyZ";
-import IntraSellZ from "./IntraSellZ";
-import zerodhaLogo from "./Assets/zerodha-logo.svg";
+// *****************Imports*****************
+import { React, useState } from "react";
+import "./intraUpstox.css"; //CSS import
+import IntraBuyU from "./IntraBuyU";
+import IntraSellU from "./IntraSellU";
+import upstoxLogo from "./Assets/upstox-logo.svg"; //Logo
+// ******************************************
 
-function IntraZerodha() {
+function IntraUpstox() {
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [deliveryType, setDeliveryType] = useState("false");
+
+  // *****************Functions to check input value of quantity*****************
 
   function quantityInputHandler(e) {
     if (!e.target.value) {
@@ -22,6 +26,10 @@ function IntraZerodha() {
       document.getElementById("qty-error").innerHTML = "";
     }
   }
+
+  // ***********************************************************************
+
+  // *****************Functions to check input value of price*****************
   function priceInputHandler(e) {
     if (!e.target.value) {
       setPrice(0);
@@ -35,39 +43,47 @@ function IntraZerodha() {
       document.getElementById("price-error").innerHTML = "<br />";
     }
   }
+  // ***********************************************************************
+
+  // *****************Function calls*****************
   function updateSellHandler() {
     setDeliveryType("true");
   }
   function updateBuyHandler() {
     setDeliveryType("false");
   }
+  // *******************************************************
 
   return (
     <div className="container">
       <div className="cal-broker-name">
-        <div className="cal-name"><h2><b>Intraday Brokerage Calculator for</b></h2>{" "} </div>
-        <img src={zerodhaLogo} alt="logo" className="broker-logo" />
+        <div className="cal-name">
+          <h3><b>Intraday Brokerage Calculator for</b></h3>
+        </div>
+        <img src={upstoxLogo} alt="logo" className="broker-logo" />
       </div>
+      
       <div className="input-container">
+        
         <div className="tab-container">
+        
           <div className="tabs">
             <div
               className="tab-item lt-mar amount-heading-font "
-              id={deliveryType === "false" ? "active-btnz" :"" }
+              id={deliveryType === "false" ? "active-btnu" : ""}
               onClick={updateBuyHandler}
             >
               Intraday - Buy
             </div>
             <div
               className="tab-item rt-mar amount-heading-font"
-              id={deliveryType === "false" ? "" :"active-btnz" }
+              id={deliveryType === "false" ? "" : "active-btnu"}
               onClick={updateSellHandler}
             >
               Intraday - Sell
             </div>
           </div>
           <div className="input-div">
-            
             <div className="input-section-one">
               <div className="input-label amount-heading-font">
                 <label htmlFor="price">Share Price</label>
@@ -111,9 +127,9 @@ function IntraZerodha() {
           </div>
           {/* -------------- */}
           {deliveryType === "false" ? (
-            <IntraBuyZ p={price} q={quantity} />
+            <IntraBuyU p={price} q={quantity} />
           ) : (
-            <IntraSellZ p={price} q={quantity} />
+            <IntraSellU p={price} q={quantity} />
           )}
         </div>
       </div>
@@ -121,4 +137,4 @@ function IntraZerodha() {
   );
 }
 
-export default IntraZerodha;
+export default IntraUpstox;
