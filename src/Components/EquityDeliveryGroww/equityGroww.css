@@ -2,7 +2,7 @@
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
     justify-content: space-around;
     align-items: center;
     background-color: transparent;
