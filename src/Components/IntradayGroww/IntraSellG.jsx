@@ -1,6 +1,6 @@
 // *****************Imports*****************
 import { useEffect } from "react";
-import "./intraGroww.css";  //CSS import
+import "./IntraGroww.css";  //CSS import
 // ******************************************
 
 function IntraSellG(props) {

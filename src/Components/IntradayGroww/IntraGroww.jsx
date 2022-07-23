@@ -1,6 +1,6 @@
 // *****************Imports*****************
 import { React, useState } from "react";
-import "./intraGroww.css"; //CSS import
+import "./IntraGroww.css"; //CSS import
 import IntraBuyG from "./IntraBuyG";
 import IntraSellG from "./IntraSellG";
 import growwLogo from "./Assets/groww-logo.svg"; //Logo
